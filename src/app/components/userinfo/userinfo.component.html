@@ -1,0 +1,18 @@
+<h3>Nuevo usuario</h3>
+<button [routerLink]="['/users']" class="btn btn-sm btn-outline-primary">Volver</button>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <form (ngSubmit)="guardar()" #forma="ngForm">
+            <div class="form-goup">
+                <label for="">Nombre</label>
+                <input type="text" name="username" placeholder="Nombre de usuarios" required>
+            </div>
+            <div class="form-goup">
+                <label for="">Aplicacion</label>
+                <input type="text" name="useraplication" placeholder="Aplicacion" required>
+            </div>
+            <button class="btn btn-outline-primary">Guardar</button>
+        </form>
+    </div>
+</div>
