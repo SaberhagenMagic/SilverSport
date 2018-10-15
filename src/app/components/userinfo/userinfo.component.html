@@ -1,18 +1,19 @@
-<h3>Nuevo usuario</h3>
+<h3>Usuario</h3>
 <button [routerLink]="['/users']" class="btn btn-sm btn-outline-primary">Volver</button>
+<button (click)="agregaNuevo(forma)" class="btn btn-sm btn-outline-primary">Nuevo Usuario</button>
 <hr>
 <div class="row">
     <div class="col-md-12">
         <form (ngSubmit)="guardar()" #forma="ngForm">
-            <div class="form-goup">
-                <label for="">Nombre</label>
-                <input type="text" name="username" placeholder="Nombre de usuarios" required>
+            <div class="form-group">
+                <label for="username">Nombre</label>
+                <input [(ngModel)]="user.username" class="form-control" type="text" name="username" placeholder="Nombre de usuarios" required>
             </div>
-            <div class="form-goup">
-                <label for="">Aplicacion</label>
-                <input type="text" name="useraplication" placeholder="Aplicacion" required>
+            <div class="form-group">
+                <label for="useraplication">Aplicacion</label>
+                <input [(ngModel)]="user.aplication" class="form-control" type="number" name="useraplication" placeholder="Aplicacion" required>
             </div>
-            <button class="btn btn-outline-primary">Guardar</button>
+            <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-primary">Guardar</button>
         </form>
     </div>
 </div>

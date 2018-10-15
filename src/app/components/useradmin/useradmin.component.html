@@ -2,6 +2,31 @@
 <hr>
 <div class="row">
     <div class="col-md-12">
-        <button class="btn btn-outline-primary">Nuevo</button>
+        <button [routerLink]="['/user']" class="btn btn-outline-primary">Nuevo</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row tHead">
+        <div class="col-sm">
+            #
+        </div>
+        <div class="col-sm">
+            Nombre
+        </div>
+        <div class="col-sm">
+            Aplicacion
+        </div>
+        <div class="col-sm">
+            Opciones
+        </div>
+    </div>
+    <div *ngFor="let usr of usuarios" class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">{{ usr.username }}</div>
+        <div class="col-sm">{{ usr.aplication }}</div>
+        <div class="col-sm">
+            <button [routerLink]="['/user']" class="btn btn-sm btn-outline-primary">Editar</button>
+        </div>
     </div>
 </div>

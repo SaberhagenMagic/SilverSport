@@ -7,7 +7,7 @@ const APPROUTES: Routes = [
   { path: 'home', component: AppComponent },
   { path: 'users', component: UseradminComponent },
   { path: 'user', component: UserinfoComponent },
-  { path: 'user:id', component: UserinfoComponent },
+  { path: 'user/:id', component: UserinfoComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
