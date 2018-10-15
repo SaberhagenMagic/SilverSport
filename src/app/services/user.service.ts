@@ -13,7 +13,7 @@ export class UserService {
   constructor( private http: Http) { }
 
   nuevoUsuario (user: User) {
-    let body = JSON.stringify( user );
+    const body = JSON.stringify( user );
     const headers = new Headers({
       'Content-Type' : 'application/json'
     });
@@ -26,12 +26,12 @@ export class UserService {
   }
 
   editaUsuario (user: User, key$: string) {
-    let body = JSON.stringify( user );
+    const body = JSON.stringify( user );
     const headers = new Headers({
       'Content-Type' : 'application/json'
     });
 
-    let url = `${ this.fireUserUrl }/${ key$ }.json`;
+    const url = `${ this.fireUserUrl }/${ key$ }.json`;
 
     return this.http.put( url, body, { headers: headers } ).pipe(
           map( res => {
@@ -40,8 +40,18 @@ export class UserService {
           }));
   }
 
+  borraUsuario (key$: string) {
+
+    const url = `${ this.fireUserUrl }/${ key$ }.json`;
+
+    return this.http.delete( url ).pipe(
+          map( res => {
+            return res.json();
+          }));
+  }
+
   regresaUsuario (key$: string) {
-    let url = `${ this.fireUserUrl }/${ key$ }.json`;
+    const url = `${ this.fireUserUrl }/${ key$ }.json`;
     return this.http.get(url).pipe(
       map( res => res.json() )
     );

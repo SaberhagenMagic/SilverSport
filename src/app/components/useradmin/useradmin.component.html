@@ -8,25 +8,18 @@
 
 <div class="container">
     <div class="row tHead">
-        <div class="col-sm">
-            #
-        </div>
-        <div class="col-sm">
-            Nombre
-        </div>
-        <div class="col-sm">
-            Aplicacion
-        </div>
-        <div class="col-sm">
-            Opciones
-        </div>
+        <div class="col-sm">#</div>
+        <div class="col-sm">Nombre</div>
+        <div class="col-sm">Aplicación</div>
+        <div class="col-sm">Opciones</div>
     </div>
-    <div *ngFor="let usr of usuarios" class="row">
-        <div class="col-sm"></div>
-        <div class="col-sm">{{ usr.username }}</div>
-        <div class="col-sm">{{ usr.aplication }}</div>
+    <div *ngFor="let usr of usuarios | keys; let i = index" class="row">
+        <div class="col-sm">{{ i + 1 }}</div>
+        <div class="col-sm">{{ usuarios[usr].username }}</div>
+        <div class="col-sm">{{ usuarios[usr].aplication }}</div>
         <div class="col-sm">
-            <button [routerLink]="['/user']" class="btn btn-sm btn-outline-primary">Editar</button>
+            <button [routerLink]="['/user', usr]" class="btn btn-sm btn-outline-primary">Editar</button>
+            <button (click)="deleteUsr(usr)" class="btn btn-sm btn-outline-primary">Borrar</button>
         </div>
     </div>
 </div>

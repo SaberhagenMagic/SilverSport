@@ -21,12 +21,14 @@ export class UseradminComponent implements OnInit {
           console.log(data);
 
           this.usuarios = data;
-
-          this.usuarios = data;
         });
    }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  deleteUsr(key$: string) {
+    this.usrService.borraUsuario(key$)
+        .subscribe( respuesta =>  console.log(respuesta) );
   }
 
 }
