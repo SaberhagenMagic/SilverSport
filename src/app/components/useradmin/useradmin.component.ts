@@ -28,7 +28,13 @@ export class UseradminComponent implements OnInit {
 
   deleteUsr(key$: string) {
     this.usrService.borraUsuario(key$)
-        .subscribe( respuesta =>  console.log(respuesta) );
+        .subscribe( respuesta => {
+          if (respuesta) {
+            console.error(respuesta);
+          } else {
+            delete this.usuarios[key$];
+          }
+        } );
   }
 
 }
