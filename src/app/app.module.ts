@@ -10,6 +10,7 @@ import { UserService } from './services/user.service';
 import { AppComponent } from './app.component';
 import { UseradminComponent } from './components/useradmin/useradmin.component';
 import { UserinfoComponent } from './components/userinfo/userinfo.component';
+import { LoginComponent } from './components/login/login.component';
 // Pipes
 import { KeysPipe } from './pipes/keys.pipe';
 
@@ -18,7 +19,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     AppComponent,
     UseradminComponent,
     UserinfoComponent,
-    KeysPipe
+    KeysPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
