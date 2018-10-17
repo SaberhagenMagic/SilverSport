@@ -1,0 +1,20 @@
+<div class="text-center">
+    <form class="frmLogin border rounded shadow-sm p-3 mb-5 bg-white" #frmRegister="ngForm">
+        <div class="form-group">
+            <label for="inputEmail1">Correo</label>
+            <input [(ngModel)]="usr.email" type="email" class="form-control" id="inputEmail1" name="inputEmail" placeholder="Ingresa correo" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword1">Contraseña</label>
+            <input [(ngModel)]="usr.pwd" type="password" class="form-control" id="inputPassword1" name="inputPassword1" placeholder="Contraseña" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword2">Confirmar contraseña</label>
+            <input [(ngModel)]="cpwd" type="password" class="form-control" id="inputPassword2" name="inputPassword2" placeholder="Confirmar contraseña" required>
+            <small *ngIf="usr.pwd !== cpwd && cpwd.length > 0" id="password2Help" class="form-text text-danger">La confirmación de constraseña no coincide.</small>
+        </div>
+        <button type="reset" class="btn btn-primary">Limpiar</button>
+        <button (click)="Registrar()" [disabled]="!frmRegister.valid" type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+    <div>{{ frmRegister.valid }}</div>
+</div>

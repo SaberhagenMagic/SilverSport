@@ -1,1 +1,20 @@
+<div class="text-center">
+    <form class="frmLogin border rounded shadow-sm p-3 mb-5 bg-white" #frmLogin="ngForm">
+        <div class="form-group">
+            <label for="inputEmail">Correo</label>
+            <input [(ngModel)]="usr.email" type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="Ingresa correo" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Contraseña</label>
+            <input [(ngModel)]="usr.pwd" type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Contraseña" required>
+        </div>
+        <div class="form-group">
+            <a [routerLink]="['/register']">Registrarme</a>
+        </div>
 
+        <button (click)="login()" [disabled]="!frmLogin.valid" type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+    {{ frmLogin.valid }}
+</div>
+
+<button (click)="logout()" type="button" class="btn btn-danger">Salir</button>
